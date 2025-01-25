@@ -6,8 +6,11 @@ export const getWatchtimeHandler = (
     req: BaseRequest<{ username: string }>,
     res: Response
 ) => {
-    const { channelId, token, username } = req.query
-    const streamElementsAPI = new StreamElementsAPI(channelId, token)
+    const jwtToken = req.jwtToken
+    const channelId = req.channelId
+    const { username } = req.query
+
+    const streamElementsAPI = new StreamElementsAPI(channelId, jwtToken)
     streamElementsAPI.points
         .fetchUserWatchtime(username)
         .then((user) => {
@@ -16,7 +19,9 @@ export const getWatchtimeHandler = (
                 return
             }
 
-            res.send(`Du schaust den Stream bereits seit ${user.minutes} Minuten.`)
+            res.send(
+                `Du schaust den Stream bereits seit ${user.minutes} Minuten.`
+            )
         })
         .catch(() => {
             res.sendStatus(500)

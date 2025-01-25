@@ -3,7 +3,7 @@ import { requireQueryParameters } from '../utils/requireQueryParameters'
 import { getWatchtimeHandler } from '../controllers/watchtimeController'
 const router = express.Router()
 
-router.use(requireQueryParameters(['channelId', 'token', 'username']))
+router.use(requireQueryParameters(['username']))
 
 router.get('/watchtime', getWatchtimeHandler)
 

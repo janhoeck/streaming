@@ -1,4 +1,7 @@
 {
+    "ts-node": {
+        "files": true
+    },
     "compilerOptions": {
         "target": "es2016",
         "lib": ["es6"],
@@ -11,7 +14,8 @@
         "strict": true,
         "noImplicitAny": true,
         "skipLibCheck": true,
-        "types": ["node"]
+        "types": ["node"],
+        "typeRoots": ["./node_modules/@types", "./src/types"]
     },
     "include": [
         "src/**/*"
