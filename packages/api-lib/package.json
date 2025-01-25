@@ -18,5 +18,8 @@
     },
     "dependencies": {
         "axios": "^1.7.9"
+    },
+    "optionalDependencies": {
+        "@rollup/rollup-linux-x64-gnu": "^4.32.0"
     }
 }
