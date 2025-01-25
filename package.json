@@ -1,6 +1,7 @@
 {
     "scripts": {
-        "heroku-postbuild": "cd scripts & sh ./heroku.sh",
+        "heroku-postbuild": "./scripts/heroku.sh",
+        "start": "cd streamelements-nodejs-server & npm run start",
         "format": "npx prettier . --write"
     },
     "devDependencies": {
