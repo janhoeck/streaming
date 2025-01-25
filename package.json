@@ -1,5 +1,6 @@
 {
     "scripts": {
+        "heroku-postbuild": "cd scripts & sh ./heroku.sh",
         "format": "npx prettier . --write"
     },
     "devDependencies": {
