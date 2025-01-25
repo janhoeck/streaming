@@ -1,7 +1,7 @@
 import express from 'express'
 import watchtimeRoute from './routes/watchtimeRoute'
 
-const PORT = 3000
+const PORT = process.env.PORT || 8080
 
 const application = express()
 application.use(watchtimeRoute)
