@@ -14,7 +14,6 @@ cd "$ROOT_DIR"
 API_LIB_DIR="$ROOT_DIR/packages/api-lib"
 echo "Navigating to $API_LIB_DIR and running 'npm run build'"
 cd "$API_LIB_DIR"
-npm i
 npm run build
 
 # Navigate back to the project directory
@@ -25,7 +24,6 @@ cd "$ROOT_DIR"
 SERVER_DIR="$ROOT_DIR/streamelements-nodejs-server"
 echo "Navigating to $SERVER_DIR and running 'npm run build'"
 cd "$SERVER_DIR"
-npm i
 npm run build
 
 echo "Build processes completed."
