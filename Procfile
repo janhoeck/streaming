@@ -1,1 +1,0 @@
-web: node ./streamelements-nodejs-server/build/index.js
