@@ -1,6 +1,8 @@
 import { BaseRequest } from '../types/BaseRequest'
 import { Response } from 'express'
 import { StreamElementsAPI } from '@janhck/api-lib'
+import { convertMinutesToTime } from '../utils/convertMinutesToTime'
+import { formatTimeOutput } from '../utils/formatTimeOutput'
 
 export const getWatchtimeHandler = (
     req: BaseRequest<{ username: string }>,
@@ -19,9 +21,8 @@ export const getWatchtimeHandler = (
                 return
             }
 
-            res.send(
-                `Du schaust den Stream bereits seit ${user.minutes} Minuten.`
-            )
+            const output = formatTimeOutput(convertMinutesToTime(user.minutes))
+            res.send(output)
         })
         .catch(() => {
             res.sendStatus(500)

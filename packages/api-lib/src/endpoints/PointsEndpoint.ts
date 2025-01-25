@@ -2,7 +2,7 @@ import { BaseEndpoint } from './BaseEndpoint'
 
 export type User = {
     username: string
-    minutes: string
+    minutes: number
 }
 
 export type WatchtimeResponse = {
