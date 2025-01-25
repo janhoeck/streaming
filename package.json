@@ -2,6 +2,8 @@
     "scripts": {
         "heroku-prebuild": "scripts/heroku-prebuild.sh",
         "heroku-postbuild": "scripts/heroku-postbuild.sh",
+        "heroku:deploy": "git push heroku main",
+        "heroku:logs": "heroku logs --tail",
         "start": "npm --prefix streamelements-nodejs-server run start",
         "format": "npx prettier . --write"
     },

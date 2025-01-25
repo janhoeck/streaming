@@ -12,14 +12,13 @@ export const getWatchtimeHandler = (
         .fetchUserWatchtime(username)
         .then((user) => {
             if (!user) {
-                res.status(404)
+                res.sendStatus(404)
                 return
             }
 
-            res.status(200)
-            res.send(user.minutes)
+            res.send(`Du schaust den Stream bereits seit ${user.minutes} Minuten.`)
         })
         .catch(() => {
-            res.status(500)
+            res.sendStatus(500)
         })
 }
