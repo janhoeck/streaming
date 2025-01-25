@@ -1,29 +1,31 @@
 #!/bin/bash
 
-# Sicherstellen, dass das Skript bei Fehlern stoppt
+# Ensure the script stops on errors
 set -e
 
-# Verzeichnis des Skripts bestimmen
+# Determine the directory of the script
 ROOT_DIR=$(dirname "$(realpath "$0")")/..
 
-# In den Projektordner navigieren (relativer Pfad)
-echo "Navigiere in den Projektordner: $ROOT_DIR"
+# Navigate to the project directory (relative path)
+echo "Navigating to the project directory: $ROOT_DIR"
 cd "$ROOT_DIR"
 
-# In den Ordner /packages/api-lib wechseln und build ausführen
+# Navigate to the /packages/api-lib folder and run build
 API_LIB_DIR="$ROOT_DIR/packages/api-lib"
-echo "Navigiere in $API_LIB_DIR und führe 'npm run build' aus"
+echo "Navigating to $API_LIB_DIR and running 'npm run build'"
 cd "$API_LIB_DIR"
+npm i
 npm run build
 
-# Zurück in das Projektverzeichnis navigieren
-echo "Zurück ins Projektverzeichnis"
+# Navigate back to the project directory
+echo "Returning to the project directory"
 cd "$ROOT_DIR"
 
-# In den Ordner /streamelements-nodejs-server wechseln und build ausführen
+# Navigate to the /streamelements-nodejs-server folder and run build
 SERVER_DIR="$ROOT_DIR/streamelements-nodejs-server"
-echo "Navigiere in $SERVER_DIR und führe 'npm run build' aus"
+echo "Navigating to $SERVER_DIR and running 'npm run build'"
 cd "$SERVER_DIR"
+npm i
 npm run build
 
-echo "Build-Prozesse abgeschlossen."
+echo "Build processes completed."
